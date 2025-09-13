@@ -221,7 +221,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed top-0 left-0 w-full h-screen bg-white text-base flex flex-col md:hidden items-center justify-center gap-6 font-medium text-gray-800 transition-all duration-500 ${
+        className={`fixed top-0 left-0 w-full h-screen bg-amber-900 text-base flex flex-col md:hidden items-center justify-center gap-6 font-medium text-gray-800 transition-all duration-500 ${
           isMenuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -232,11 +232,10 @@ const Navbar = () => {
           <img src={assets.closeIcon} alt="closeIcon" className="h-6 w-6" />
         </button>
 
-        {navLinks.map((link, i) => (
+        {/* {navLinks.map((link, i) => (
           <div key={i} className="text-center w-full">
             {link.submenu ? (
               <>
-                {/* Parent link with toggle */}
                 <button
                   className=" py-2 w-full text-lg font-medium flex items-center justify-center gap-2"
                   onClick={() =>
@@ -249,7 +248,62 @@ const Navbar = () => {
                   <span>{activeMobileDropdown === link.name ? "▲" : "▼"}</span>
                 </button>
 
-                {/* Show submenu only if active */}
+                {activeMobileDropdown === link.name && (
+                  <div className="flex flex-col gap-1">
+                    {link.submenu.map((sub, j) => (
+                      <Link
+                        key={j}
+                        to={sub.path}
+                        onClick={() => setIsMenuOpen(false)}
+                        className="text-sm text-gray-500 py-1"
+                      >
+                        {sub.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </>
+            ) : (
+              <Link
+                to={link.path}
+                onClick={() => setIsMenuOpen(false)}
+                className="block py-2"
+              >
+                {link.name}
+              </Link>
+            )}
+          </div>
+        ))} */}
+
+        {navLinks.map((link, i) => (
+          <div key={i} className="text-center w-[80%]">
+            {link.submenu ? (
+              <>
+                {/* Parent link + dropdown toggle */}
+                <div className="flex items-center justify-center gap-2">
+                  <Link
+                    to={link.path} // parent link now works
+                    onClick={() => setIsMenuOpen(false)}
+                    className="py-2 w-full text-lg font-medium text-center"
+                  >
+                    {link.name}
+                  </Link>
+
+                  {/* Dropdown toggle button */}
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setActiveMobileDropdown(
+                        activeMobileDropdown === link.name ? null : link.name
+                      )
+                    }
+                    className="mx-[-4px]"
+                  >
+                    {activeMobileDropdown === link.name ? "▲" : "▼"}
+                  </button>
+                </div>
+
+                {/* Submenu items */}
                 {activeMobileDropdown === link.name && (
                   <div className="flex flex-col gap-1">
                     {link.submenu.map((sub, j) => (
