@@ -1,0 +1,192 @@
+/* Container Styling */
+.login-container {
+  width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* Heading */
+.login-container h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Input Group */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+/* Labels */
+.input-group label {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+/* Input Fields */
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Register Link */
+.register-link {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.register-link a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+/* Home.css */
+
+/* Container Styling */
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5; /* Light gray background */
+}
+
+/* User Card */
+.user-card {
+  background: #fff; /* White background */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 300px;
+}
+
+/* Heading */
+.user-card h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 22px;
+}
+
+/* Buttons */
+.logout-btn,
+.admin-btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+/* Logout Button */
+.logout-btn {
+  background-color: #e74c3c; /* Red */
+  color: white;
+}
+
+.logout-btn:hover {
+  background-color: #c0392b;
+}
+
+/* Admin Button */
+.admin-btn {
+  background-color: #3498db; /* Blue */
+  color: white;
+}
+
+.admin-btn:hover {
+  background-color: #2980b9;
+}
+
+.admincontainer {
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.admincontainer h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.admincontainer table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.admincontainer th,
+.admincontainer td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.admincontainer th {
+  background-color: #007bff;
+  color: white;
+}
+
+.admincontainer tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.admincontainer tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.delete-btn {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.delete-btn:hover {
+  background-color: #cc0000;
+}
