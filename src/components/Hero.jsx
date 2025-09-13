@@ -8,7 +8,7 @@ const Hero = () => {
       className="flex flex-col items-start justify-center
         px-4 sm:px-6 md:px-12 lg:px-24 xl:px-32
         text-white
-        bg-[url('src/assets/heroImage.png')]
+        bg-[url('/heroImage.png')]
         bg-no-repeat bg-cover bg-center
         min-h-[80vh] md:min-h-screen
         pt-20 md:pt-24 pb-12 md:pb-20"
