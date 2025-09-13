@@ -4,7 +4,6 @@ import { useState } from "react";
 import axios from "axios";
 import { data, Link, useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
-import { updateUser } from "../../../server/controllers/Admin.js";
 
 export default function Admin() {
   const navigate = useNavigate();
