@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 
 import TitleSubtitle from "../components/TitleSubtitle";
-import { get } from "../Services/ApiEndpoint";
+import { get, post } from "../Services/ApiEndpoint";
 import { useAppContext } from "../Context/useAppContext";
 import { assets } from "../assets/assets";
 
@@ -26,9 +26,29 @@ const MyBooking = () => {
     }
   };
 
+  const handlePayment = async (bookingId) => {
+    try {
+      const { data } = await post(
+        "/api/bookings/stripe-payment",
+        { bookingId },
+        { headers: { Authorization: `Bearer ${await getToken()}` } }
+      );
+
+      if (data.success) {
+        window.location.href = data.url;
+        toast.success("rfef");
+      } else {
+        toast.error(data.message);
+      }
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
+
   useEffect(() => {
     fetchUserBooking();
   }, [user]);
+
   return (
     <div className="py-28 md:pb-35 md:pt-32 px-4 md:px-16 lg:px-24 xl:px-32">
       <TitleSubtitle
@@ -116,6 +136,7 @@ const MyBooking = () => {
 
               {!booking.isPaid && (
                 <button
+                  onClick={() => handlePayment(booking._id)}
                   className="px-4 py-1.5 mt-4 text-xs border border-gray-400 hover:bg-gray-50 transition-all
           rounded-full cursor-pointer"
                 >

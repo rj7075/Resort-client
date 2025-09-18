@@ -47,6 +47,7 @@ import HotelReg from "./pages/HotelReg.jsx";
 import { useAppContext } from "./Context/useAppContext.jsx";
 import OwnerDashBoard from "./pages/HotelOwnerPages/OwnerDashBoard.jsx";
 import OwnerRoomList from "./pages/HotelOwnerPages/OwnersRoomList.jsx";
+import Loader from "./components/Loader.jsx";
 
 function App() {
   const isOwnerPath = useLocation().pathname.includes("owner");
@@ -93,6 +94,7 @@ function App() {
           </Route>
           <Route path="/rooms" element={<Allrooms />} />
           <Route path="/my-bookings" element={<MyBooking />} />
+          <Route path="/loader/:nextUrl" element={<Loader />} />
           <Route path="/rooms/:id" element={<RoomDetails />} />
           <Route path="/experience" element={<Experience />} />
           <Route path="/about" element={<About />}>

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "https://resortsbooking-server.onrender.com",
+  baseURL: "https://resortsbooking-server3.onrender.com",
   withCredentials: true,
 });
 
